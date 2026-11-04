@@ -22,17 +22,23 @@ The purpose of this project is to help developers understand how to integrate th
 
 ## Prerequisites
 Before running this project, ensure the following are installed:
-- [Visual Studio 2019 (version 16.6+)]( https://visualstudio.microsoft.com/downloads) (version 16.6 or later)  
-- [.NET Core SDK 3.1.3+](https://dotnet.microsoft.com/download/dotnet-core/3.1) or later  
-- ASP.NET Core environment setup  
+- [Visual Studio 2022 or later](https://visualstudio.microsoft.com/downloads), or Visual Studio Code with the C# Dev Kit extension  
+- [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet/10.0) or later  
+- ASP.NET Core and Blazor WebAssembly workload  
+- SQL Server LocalDB (for the NORTHWND database)  
 
 ## Installation and Running the Application
 1. Clone or download the repository .
-2. Open the solution in Visual Studio 2019.
-3. In the **Server** project, update the database connection string in the `appsettings.json` file.
-4. Ensure that the `NorthWind.MDF` database file is correctly placed in the **Shared** project.
+2. Open the solution in Visual Studio 2022 or later, with the .NET 10 SDK installed.
+3. In the **MyBlazorApp** (server) project, update the database connection string in the `appsettings.json` file.
+4. Ensure that the `NORTHWND.MDF` database file is correctly placed in the **MyBlazorApp.Shared** project.
 5. Build and run the solution.
 6. Launch the application in the browser to view CRUD operations in the TreeView.
+
+## Project Structure
+- **MyBlazorApp** – ASP.NET Core host (server) project: Web API controller, Program.cs with minimal hosting, and static file hosting for the client.
+- **MyBlazorApp.Client** – Blazor WebAssembly client project: TreeView page, layout, and Syncfusion Blazor components.
+- **MyBlazorApp.Shared** – Shared class library: EF Core DbContext, data access layer, models, and the `App_Data` database files.
 
 ## Usage
 Run the application to:
